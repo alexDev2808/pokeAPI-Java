@@ -8,7 +8,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -63,8 +65,20 @@ public class CPokeAPI {
             
             modelo.addRow(new Object[]{name, weight, heigth});
             
-        } catch (Exception e) {
+            nombre.setText(name);
+            peso.setText(String.valueOf(weight));
+            altura.setText(String.valueOf(heigth));
+            expBase.setText(String.valueOf(experience));
             
+            String imgURL = jsonObj.getJSONObject("sprites").getString("front_default");
+            
+            ImageIcon icon = new ImageIcon(new URL(imgURL));
+            
+            foto.setIcon(icon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ingrese solo id o nombre del pokemon existente, error: " + e);
         }
         
         
