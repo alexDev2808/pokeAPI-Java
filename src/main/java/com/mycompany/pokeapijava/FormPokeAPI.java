@@ -50,6 +50,11 @@ public class FormPokeAPI extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Buscador de Pokemones"));
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado de busqueda"));
 
@@ -208,6 +213,11 @@ public class FormPokeAPI extends javax.swing.JFrame {
     private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAlturaActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        CPokeAPI objPokeAPI = new CPokeAPI();
+        objPokeAPI.MostrarPokemon(tbPokemones, txtBuscador, txtNombres, txtPeso, txtAltura, txtExpBase, foto);
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
