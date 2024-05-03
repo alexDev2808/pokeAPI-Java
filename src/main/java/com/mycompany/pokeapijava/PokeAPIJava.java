@@ -11,6 +11,8 @@ package com.mycompany.pokeapijava;
 public class PokeAPIJava {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        FormPokeAPI objFormulario = new FormPokeAPI();
+        objFormulario.setVisible(true);
     }
 }
